@@ -27,7 +27,7 @@
         <h1>Öğrenci Listeleme Ekranı</h1>
     </div>
     <div class="content1">
-        <table class="table table-hover">
+        <!-- <table class="table table-hover">
             <thead>
                 <tr>
                     <th>Resmi</th>
@@ -57,13 +57,11 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
+        <?php
+            include 'partial/data_list.php';
+        ?>
     </div>
-    <?php
-        
-       
-
-    ?>
     <footer>
     <p>&copy; Company 2020-2021</p>
     </footer>
