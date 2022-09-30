@@ -10,7 +10,7 @@
         die("Connection Failed: " . $conn->connect_error);
     }
 
-    
-
     $conn->close();
+
+    header("location:../index.php");
 ?>
