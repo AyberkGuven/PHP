@@ -14,32 +14,29 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        echo "<table class='table table-hover'><thead><tr><th>Resmi</th><th>Adı Soyadı</th><th>Cinsiyeti</th><th>Sınıfı</th><th></th></tr></thead>";
+        echo "<table class='table table-hover'><thead><tr><th>Resmi</th><th>Adı Soyadı</th><th>Cinsiyeti</th><th>Sınıfı</th><th></th></tr></thead><tbody>";
         while ($row = $result->fetch_assoc()) {
             echo
-           "<tbody>
-                <tr>
-                    <td>
-                        <img src='img/".$row["ImagePath"]."' />
-                    </td>
-                    <td>
-                        ". $row["Name"] ."
-                    </td>
-                    <td>";
-                        echo $row["Gender"] == false ? "Erkek" : "Hayır"
-                        echo"    
-                    </td>
-                    <td>
-                        ". $row["ClassId"] ."
-                    </td>
-                    <td>
-                        <button type='submit' class='btn btn-primary'>Düzenle</button>
-                        <button type='submit' class='btn btn-danger'>Sil</button>
-                    </td>
-                </tr>
-            </tbody>";
+            "<tr>
+                <td>
+                    <img src='img/".$row['ImagePath']."' />
+                </td>
+                <td>
+                    ". $row['Name'] ."
+                </td>
+                <td>
+                    ". $row['Gender'] == false ? 'Erkek' : 'Hayır' ."    
+                </td>
+                <td>
+                    ". $row['ClassId'] ."
+                </td>
+                <td>
+                    <button type='submit' class='btn btn-primary'>Düzenle</button>
+                    <button type='submit' class='btn btn-danger'>Sil</button>
+                </td>
+            </tr>";
         }
-        echo "</table>";
+        echo "</tbody></table>";
     }else {
         echo "0 results";
     }
