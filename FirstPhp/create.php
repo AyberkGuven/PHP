@@ -26,7 +26,7 @@
     <div class="banner">
         <h1>Öğrenci Listeleme Ekranı</h1>
     </div>
-    <form class="form1" action="/action_page.php">
+    <form class="form1" action="/action_page.php" method="post">
         <div class="mb-3 mt-3">
             <label for="Name">Adı:</label>
             <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz" name="name">
@@ -55,11 +55,6 @@
         </div>
         <button type="submit" class="btn btn-primary">Kaydet</button>
     </form>
-    <?php
-        
-       
-
-    ?>
     <footer>
     <p>&copy; Company 2020-2021</p>
     </footer>

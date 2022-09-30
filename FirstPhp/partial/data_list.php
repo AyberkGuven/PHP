@@ -10,25 +10,27 @@
         die("Connection Failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT Id, Name, SurName, Gender, ImagePath, ClassId FROM student";
+    $sql = "SELECT student.Id, student.Name, student.SurName, student.Gender, student.ImagePath, class.Name AS cName FROM student INNER JOIN class on student.ClassId = class.Id";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+        
         echo "<table class='table table-hover'><thead><tr><th>Resmi</th><th>Adı Soyadı</th><th>Cinsiyeti</th><th>Sınıfı</th><th></th></tr></thead><tbody>";
         while ($row = $result->fetch_assoc()) {
+            $cinsiyet = $row["Gender"] == false ? "Erkek" : "Kadın";
             echo
             "<tr>
                 <td>
-                    <img src='img/".$row['ImagePath']."' />
+                    <img src='img/". $row["ImagePath"] ."' />
                 </td>
                 <td>
-                    ". $row['Name'] ."
+                    ".$row["Name"]." ".$row["SurName"]."
                 </td>
                 <td>
-                    ". $row['Gender'] == false ? 'Erkek' : 'Hayır' ."    
+                    ". $cinsiyet ."
                 </td>
                 <td>
-                    ". $row['ClassId'] ."
+                    ". $row["cName"] ."
                 </td>
                 <td>
                     <button type='submit' class='btn btn-primary'>Düzenle</button>
