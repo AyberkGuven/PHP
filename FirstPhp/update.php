@@ -26,11 +26,12 @@
     <div class="banner">
         <h1>Öğrenci Listeleme Ekranı</h1>
     </div>
-    <div class="content1">
+    <form class="form1" action="" method="post" enctype="multipart/form-data">
         <?php
-            include 'partial/data_list.php';
+          include ("partial/update_page.php");
         ?>
-    </div>
+        <a class="btn btn-primary" >Güncelle</a>
+    </form>
     <footer>
     <p>&copy; Company 2020-2021</p>
     </footer>

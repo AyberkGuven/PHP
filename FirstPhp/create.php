@@ -26,7 +26,7 @@
     <div class="banner">
         <h1>Öğrenci Listeleme Ekranı</h1>
     </div>
-    <form class="form1" action="/action_page.php" method="post">
+    <form class="form1" action="partial/create_page.php" method="post" enctype="multipart/form-data">
         <div class="mb-3 mt-3">
             <label for="Name">Adı:</label>
             <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz" name="name">
@@ -38,20 +38,24 @@
         <div class="mb-3 mt-3">
             <label for="Gender">Cinsiyeti:</label>
             <select class="form-select" id="gender" name="gender">
-                <option>Kadın</option>
-                <option>Erkek</option>
+                <option value="1">Kadın</option>
+                <option value="0">Erkek</option>
             </select>
         </div>
         <div class="mb-3 mt-3">
             <label for="Class">Sınıf:</label>
-            <select class="form-select" id="class" name="class">
-                <option>Amp 11V</option>
-                <option>Amp 12V</option>
+            <select class="form-select" id="class" name="classId">
+                <!-- Sınıf Listesi. -->
+                <?php
+                    include 'partial/class_list.php';
+                ?>
+                <!-- <option>Amp 11V</option>
+                <option>Amp 12V</option> -->
             </select>
         </div>
         <div class="mb-3 mt-3">
             <label for="Img">Resim:</label><br>
-            <input type="file" class="form-control" id="Image" placeholder="Dosya Seçilmedi" name="Image">
+            <input type="file" class="form-control" id="Image" name="fileToUpload" id="fileToUpload">
         </div>
         <button type="submit" class="btn btn-primary">Kaydet</button>
     </form>

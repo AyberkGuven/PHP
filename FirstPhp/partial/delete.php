@@ -17,7 +17,7 @@
 
     if ($conn->query($sql) === TRUE) {
     }else {
-        echo "<script>alert='Silinmedi';</script>". $conn->error;
+        echo "<script>alert=('Silinmedi');</script>". $conn->error;
     }
 
     $conn->close();

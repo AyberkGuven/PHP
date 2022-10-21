@@ -32,7 +32,7 @@
                     ". $row["cName"] ."
                 </td>
                 <td>
-                    <button type='submit' class='btn btn-primary'>Düzenle</button>
+                    <a class='btn btn-primary' href='update.php?id=". $row["sId"] ."'>Düzenle</a>
                     <a class='btn btn-danger' href='partial/delete.php?id=". $row["sId"] ."'>Sil</a>
                 </td>
             </tr>";
