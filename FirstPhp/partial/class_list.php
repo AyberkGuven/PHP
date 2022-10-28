@@ -21,7 +21,7 @@
         //     echo "<option>". $row["Name"]; ."</option>";
         // }
     }else {
-        echo "<script>alert = 'Sınıflar gelmedi.';</script>";
+        echo "<script>alert('Sınıflar gelmedi.');</script>";
     }
 
     $conn->close();

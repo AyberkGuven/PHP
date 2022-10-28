@@ -1,26 +1,21 @@
 <?php
-    /*create form geldi.
-    echo $_POST["name"];
-    echo $_POST["surname"];
-    echo $_POST["gender"];
-    echo $_POST["class"];
-    echo $_POST["Image"];*/
-
     $servername = "localhost";
     $username = "root";
     $password = "";
     $dbname = "firstphp9061";
-    
+
+    // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
-    
-    if ($conn -> connect_error ) {
-        die("Connection Failed: " . $conn->connect_error);
+    // Check connection
+    if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
     }
 
+    $UpdateId = $_POST["SID"];
     $Name = $_POST["name"];
     $SurName = $_POST["surname"];
     $Gender = $_POST["gender"];
-    $ClassId = $_POST["classId"];
+    $Class = $_POST["classId"];
     $Image = basename($_FILES["fileToUpload"]["name"]);
 
     $target_dir = "img/";
@@ -68,7 +63,7 @@
         echo  $target_file;
 
         // $test="C:\wamp64\tmp\phpE775.tmp";
-        $hedef="../img/";
+        $hedef="img/";
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],  $hedef)) {
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
         } else {
@@ -76,15 +71,15 @@
         }
     }
 
-    $sql = "INSERT INTO student (Name, SurName, Gender, classId, ImagePath) VALUES ('$Name', '$SurName', '$Gender', '$ClassId', '$Image')";
+    $sqlUpdate = "UPDATE student SET Name = '$Name', SurName = '$SurName', Gender = '$Gender', ClassId = '$Class', ImagePath = '$Image' WHERE Id=$UpdateId ";
 
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('New record created successfully');</script>";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if ($conn->query($sqlUpdate) === TRUE) {
+        echo "<script>alert('Güncelleme Başarılı');</script>";
+    }else {
+        echo "<script>alert('Güncelleme Başarısız');</script>";
     }
 
     $conn->close();
-    
+
     header("location:../index.php");
 ?>

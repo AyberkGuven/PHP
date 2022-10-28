@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -26,11 +27,10 @@
     <div class="banner">
         <h1>Öğrenci Listeleme Ekranı</h1>
     </div>
-    <form class="form1" action="" method="post" enctype="multipart/form-data">
+    <form class="form1" action="partial/edited.php" method="post" enctype="multipart/form-data">
         <?php
           include ("partial/update_page.php");
         ?>
-        <a class="btn btn-primary" >Güncelle</a>
     </form>
     <footer>
     <p>&copy; Company 2020-2021</p>
