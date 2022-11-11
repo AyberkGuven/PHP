@@ -1,5 +1,5 @@
 <?php
-    // veri geldi.
+    // echo "veri geldi.";
     // echo $_POST["cartNo"];
     // echo $_POST["cart"];
     // echo $_POST["optradio"];
@@ -12,6 +12,7 @@
     $dbname = "ayberkguven9061";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn -> set_charset("utf8");
 
     if ($conn -> connect_error ) {
         die("Connection Failed: " . $conn->connect_error);
@@ -27,7 +28,8 @@
     $sql = "INSERT INTO Cart (cartNo, Name, mountId, yearsId, Turu, iletiId) VALUES ('$cNo', '$Name', '$Mount', '$Year', '$Turu', $Ileti)";
 
     if ($conn->query($sql) === TRUE) {
-        echo "<script>alert('New record created successfully');</script>";
+        // echo "<script>alert('New record created successfully');</script>";
+        $last_id = $conn->insert_id;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <!-- Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <title>Online Odeme Sayfasi</title>
 </head>
@@ -15,7 +16,7 @@
     <nav></nav>
     <div class="container-sm">
         <h1>Online Ödeme Sayfası</h1>
-        <form class="form1" action="partial/data_list.php" method="post" enctype="multipart/form-data">
+        <form class="form1" action="index.php" method="post" enctype="multipart/form-data">
             <div class="mb-3 mt-3">
                 <label for="Cart" class="form-label">Kart Sahibi</label>
                 <input type="text" class="form-control" id="cart" name="cart" require>
@@ -28,13 +29,13 @@
                 <label class="form-label">Kart Türü</label>
             </div>
             <div class="form-check flex">
-                <div>
-                    <input type="radio" class="form-check-input" id="radio" name="optradio" value="0">
+                <div class="mb-3">
                     <label class="form-check-label" for="radio">Master</label>
+                    <input type="radio" id="radio" name="optradio" value="0">
                 </div>
-                <div>
-                    <input type="radio" class="form-check-input" id="radio" name="optradio" value="1">
+                <div class="mb-3">
                     <label class="form-check-label" for="radio">Visa</label>
+                    <input type="radio" id="radio" name="optradio" value="1">
                 </div>
             </div>
             
@@ -66,12 +67,18 @@
         </form>
     </div>
     <footer></footer>
+  
 </body>
 </html>
-
+<!-- include 'partial/data_list.php'; -->
 <?php
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     include 'partial/bilgi.php';
-    // }
-    include 'partial/bilgi.php';
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        include 'partial/bilgi.php';
+        // echo '
+        // <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        //     Open modal
+        // </button>';
+    }else {
+        echo "Çalışmadı";
+    }
 ?>

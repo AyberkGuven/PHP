@@ -22,11 +22,39 @@ h1{
     margin-right: 23px;
 }
 .flex div{
-    display: flex;
-    width: 50%!important;
+    width: 21%!important;
+    float: left;
     margin: 0!important;
 }
-.alert{
+.flex{
+    padding-left: 0!important;
+}
+.flex label{
+    margin-right: 5px!important;
+}
+.modal-content{
+    background-color: #292929;
+    /* margin-top: 27%; */
+    padding: 35px;
+}
+.modal-body{
+    border: 2px solid #ffffff;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+.modal-body div{
+    display: flex!important;
+    border-bottom: 2px solid #ffffff;
+}
+.modal-body div > p{
+    width: 50%!important;
+    color: #ffffff;
+}
+h4{
+    color: #2e8b57;
+    text-align: center;
+}
+/* .alert{
     height: 355px;
     width: 755px;
     background-color: #292929;
@@ -52,4 +80,4 @@ h1{
     width: 50%;
     color: #ffffff;
     text-align: initial;
-}
+} */
