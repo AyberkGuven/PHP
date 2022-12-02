@@ -11,7 +11,7 @@
         die("Connection Failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT menu.Id, menu.Name, menu.Explanation, menu.ImagePath, turu.Name AS tName FROM menu INNER JOIN turu on menu.TuruId = turu.Id";
+    $sql = "SELECT menu.Id AS mId, menu.Name, menu.Explanation, menu.ImagePath, turu.Name AS tName FROM menu INNER JOIN turu on menu.TuruId = turu.Id";
    
     $result = $conn->query($sql);
 

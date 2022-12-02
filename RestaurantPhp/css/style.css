@@ -33,3 +33,17 @@ content div > a{
 .col-sm-4{
     margin-bottom: 27px;
 }
+.form{
+    width: 87%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.form button{
+    margin-top: 15px;
+}
+.d-flex a{
+    color: rgba(255, 255, 255, 0.55);
+}
+.d-flex a:hover{
+    color: rgba(255, 255, 255, 0.75);
+}

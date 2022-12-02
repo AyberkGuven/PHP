@@ -27,12 +27,15 @@
                         <a class="nav-link" href="#">Servislerimiz</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" href="#">Referanslarımız</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Bize Ulaşın</a>
                     </li>
                 </ul>
+            </div>
+            <div class="d-flex">
+                <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
             </div>
         </div>
     </nav>
@@ -46,6 +49,13 @@
         <div class="container">
             <div class="row">
                 <?php
+                    session_start();
+                    if (!isset($_SESSION['name'])) {
+                        echo "Giriş yapınız";
+                    }else {
+                        echo "Hoşgeldin: ".$_SESSION['name'];
+                    }
+                    session_destroy();
                     include 'partial/data_list.php';
                 ?>
                 <!-- <div class="col-sm-4">
