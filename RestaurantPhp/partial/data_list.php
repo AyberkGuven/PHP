@@ -25,7 +25,7 @@
                 </div>
                 <h3>". $row["Name"] ."</h3>
                 <p>". $row["Explanation"] ."</p>
-                <a href='#'>Detay</a>
+                <a href='detay.php?id=". $row["mId"] ."'>Detay</a>
             </div>";
         }
     }else {

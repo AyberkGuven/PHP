@@ -34,37 +34,37 @@
                     </li>
                 </ul>
             </div>
-            <!-- <div class="d-flex">
-                <a class="nav-link" href="login.php">Kullanıcı Girişi</a>
-            </div> -->
+            <div class="d-flex">
+                <!-- <?php
+                    session_start();
+                    if (!isset($_SESSION['name'])) {
+                        echo "<script>alert('Giriş yapınız');</script>";
+                    }else {
+                        echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                    }
+                    session_destroy();
+                ?> -->
+                <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
+            </div>
         </div>
     </nav>
-    <form class="form" action="partial/login_page.php" method="post" enctype="multipart/form-data">
-        <div class="mb-3 mt-3">
-            <label for="Name" class="form-label">Adınız:</label>
-            <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz" name="name">
+    <header class="banner">
+        <div class="container">
+            <h1>Esnaf Lokantamıza Hoşgeldiniz</h1>
+            <p>Lokantalarımızda Türkiye ve Dünya Mutfağından tüm yemekleri bulan şanımız vardır. Afiyet Olsun</p>
         </div>
-        <div class="mb-3">
-            <label for="pwd" class="form-label">Şifreniz:</label>
-            <input type="text" class="form-control" id="pwd" placeholder="Şifrenizi Giriniz" name="pswd">
+    </header>
+    <content>
+        <div class="container">
+            <form action=" " method="post" enctype="multipart/form-data">
+                <?php
+                    include 'partial/detay_page.php';
+                ?>
+            </form>
         </div>
-        <label for="Rank" class="form-label">Yetkiniz:</label>
-        <select class="form-select" id="rank" name="rank">
-            <?php
-                include 'partial/rank.php';
-            ?>
-        </select>
-        <button type="submit" class="btn btn-primary">Giriş Yap</button>
-    </form>
+    </content>
     <footer class="container">
         <p>Tüm hakları Enfes Esnaf Lokantamıza aittir. &copy; Company 2013</p>
     </footer>
 </body>
 </html>
-<?php
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     include 'partial/login_page.php';
-    // }else{
-    //     echo "Giriş yapılmadı.";
-    // }
-?>

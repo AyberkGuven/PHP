@@ -47,3 +47,11 @@ content div > a{
 .d-flex a:hover{
     color: rgba(255, 255, 255, 0.75);
 }
+.d-flex p{
+    color: rgba(255, 255, 255, 0.55);
+    margin-right: 11px;
+}
+/* .marginForm{
+    margin-right: 15%!important;
+    margin-left: 15%!important;
+} */

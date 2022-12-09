@@ -1,7 +1,4 @@
 <?php
-
-   echo $_GET['name'];
-   echo $_GET['pswd'];
     // Database Kullanmadan
     // $Kullanici_Adı = "admin";
     // $Şifre = "12345";
@@ -28,6 +25,7 @@
     $username = "root";
     $password = "";
     $dbname = "lokantadb_mysql_9061";
+    session_start();
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     $conn -> set_charset("utf8");
@@ -35,34 +33,42 @@
     if ($conn -> connect_error ) {
         die("Connection Failed: " . $conn->connect_error);
     }
-
     
-    // $Rank = $_POST["rank"];
+    $Form_Name = $_POST["name"];
+    $Form_Pswd = $_POST["pswd"];
+    $Form_Rank = $_POST["rank"];
     
-    $sql = "SELECT * FROM users WHERE users.Name = '".$_GET['name']."' and users.Password = '".$_GET['pswd']."'";
+    $sql = "SELECT * FROM users WHERE users.Name = '".$Form_Name."' and users.Password = '".$Form_Pswd."' AND users.rankId = '". $Form_Rank ."'";
     
-    echo "<br>";
-    echo $sql;
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $_SESSION['name'] = $row["Name"];
-            echo "Data bulundu";
-            header('Location: ../index.php');
-            // if ($Form_Name == $row["Name"] && $Form_Pswd == $row["Password"]) {
-            //     $_SESSION['name'] = $Form_Name;
-            //     // $_SESSION['Password'] = $Şifre;
-            //     // $_SESSION['rName'] = $Rank;
-            //     header('Location: index.php');
-            // }else {
-            //     echo "Kullanıcı adı veya şifre yanlış. Lütfen Tekrar deneyin. ";
-            //     header('Location: login.php');
-            // }
-        }
+
+        $_SESSION['name'] = $Form_Name;
+        header('Location: ../index.php');
+
+        // Sorgu yapılmasına gerek yok.
+        // if (!$Form_Name == NULL && !$Form_Pswd == NULL && !$Form_Rank == NULL) {
+        //     $_SESSION['name'] = $Form_Name;
+        //     // $_SESSION['Password'] = $Şifre;
+        //     // $_SESSION['rName'] = $Rank;
+        //     header('Location: ../index.php');
+        // }else {
+        //     echo "Kullanıcı adı veya şifre yanlış. Lütfen Tekrar deneyin. ";
+        //     header('Location: ../login.php');
+        // }
+
+        // Döngü ile de yapılabilir.
+        // while ($row = $result->fetch_assoc()) {
+        //     $_SESSION['name'] = $row["Name"];
+        //     echo "Data bulundu";
+        //     header('Location: ../index.php');
+            
+        // }
     }else{
-        //login sayfasına
-       // header('Location: login.php');
+        // login sayfasına
+        echo "Kullanıcı adı veya şifre yanlış. Lütfen Tekrar deneyin.";
+        header('Location: ../login.php');
     }
 
     $conn->close();

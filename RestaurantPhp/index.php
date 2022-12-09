@@ -35,6 +35,15 @@
                 </ul>
             </div>
             <div class="d-flex">
+                <?php
+                    session_start();
+                    if (!isset($_SESSION['name'])) {
+                        echo "<script>alert('Giriş yapınız');</script>";
+                    }else {
+                        echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                    }
+                    session_destroy();
+                ?>
                 <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
             </div>
         </div>
@@ -49,13 +58,6 @@
         <div class="container">
             <div class="row">
                 <?php
-                    session_start();
-                    if (!isset($_SESSION['name'])) {
-                        echo "Giriş yapınız";
-                    }else {
-                        echo "Hoşgeldin: ".$_SESSION['name'];
-                    }
-                    session_destroy();
                     include 'partial/data_list.php';
                 ?>
                 <!-- <div class="col-sm-4">
