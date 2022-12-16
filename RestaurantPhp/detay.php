@@ -56,7 +56,7 @@
     </header>
     <content>
         <div class="container">
-            <form action=" " method="post" enctype="multipart/form-data">
+            <form action="" method="post" enctype="multipart/form-data">
                 <?php
                     include 'partial/detay_page.php';
                 ?>
@@ -68,3 +68,14 @@
     </footer>
 </body>
 </html>
+<?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if ($_POST["select"] == 1) {
+            include 'partial/delete.php';
+        }else {
+            include 'partial/update.php';
+        }
+    }else{
+        // echo "Çalışmadı";
+    }
+?>

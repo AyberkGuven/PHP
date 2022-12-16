@@ -44,13 +44,17 @@
                 </div>
                 <div class='mb-3 mt-3'>
                     <label for='Img'>Resim:</label><br>
-                    <input type='file' class='form-control' value='". $row["ImagePath"] ." name='img' id='img'>
+                    <input type='file' class='form-control' value='". $row["ImagePath"] ."' name='fileToUpload' id='fileToUpload'>
                 </div>
                 <div class='mb-3 mt-3'>
-                    <a class='btn btn-primary' href='partial/update.php?id=". $row["Id"] ."'>Düzenle</a>
-                    <a class='btn btn-danger' href='partial/delete.php?id=". $row["Id"] ."'>Sil</a>
+                    <select class='form-select' name='select' id='select'>
+                        <option value='0'>Hayır</option>
+                        <option value='1'>Evet</option>
+                    </select>
                 </div>
-            ";
+                <div class='mb-3 mt-3'>
+                    <button type='submit' class='btn btn-primary'>Düzenle</button>
+                </div>";
         }
     }else {
         echo "0 result";
@@ -58,3 +62,12 @@
 
     $conn->close();
 ?>
+<!-- <a class='btn btn-primary' href='partial/update.php?id=". $row["Id"] ."'>Düzenle</a>
+<a class='btn btn-danger' href='partial/delete.php?id=". $row["Id"] ."'>Sil</a> -->
+
+                <!-- <div>
+                    <input class='form-check-input' type='checkbox' id='delete' name='delete' value='".$row["Id"]."'>
+                    <label class='form-check-label'>Sil</label>
+                </div> -->
+
+                

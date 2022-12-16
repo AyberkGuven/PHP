@@ -7,6 +7,7 @@
     session_start();
     
     $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn -> set_charset("utf8");
     
     if ($conn -> connect_error ) {
         die("Connection Failed: " . $conn->connect_error);
@@ -23,5 +24,5 @@
 
     $conn->close();
 
-    header("location:../index.php");
+    header("location: ../index.php");
 ?>

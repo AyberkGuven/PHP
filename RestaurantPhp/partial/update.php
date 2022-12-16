@@ -16,16 +16,16 @@
     $UpdateId = $_POST["SID"];
     $Name = $_POST["name"];
     $Explanation = $_POST["explanation"];
-    $Image = basename($_FILES["img"]["name"]);
+    $Image = basename($_FILES["fileToUpload"]["name"]);
     $Turu = $_POST["turuId"];
 
     $target_dir = "img/";
-    $target_file = $target_dir . basename($_FILES["img"]["name"]);
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $uploadOk = 1;
     $ImageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
     if (isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["img"]["tmp_name"]);
+        $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if ($check !== false) {
             echo "File is an image - ". $check["ImagePath"] .".";
             $uploadOk = 1;
@@ -42,7 +42,7 @@
     }
   
     // Check file size
-    if ($_FILES["img"]["size"] > 500000) {
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -58,15 +58,9 @@
         echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
     } else {
-
-        echo $_FILES["img"]["tmp_name"];
-        echo "</br>";
-        echo  $target_file;
-
-        // $test="C:\wamp64\tmp\phpE775.tmp";
         $hedef="img/";
-        if (move_uploaded_file($_FILES["img"]["tmp_name"],  $hedef)) {
-            echo "The file ". htmlspecialchars( basename( $_FILES["img"]["name"])). " has been uploaded.";
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],  $hedef)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
