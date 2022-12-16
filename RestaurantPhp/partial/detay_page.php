@@ -4,7 +4,7 @@
     $username = "root";
     $password = "";
     $dbname = "lokantadb_mysql_9061";
-    session_start();
+    // session_start();
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     $conn -> set_charset("utf8");
@@ -47,6 +47,7 @@
                     <input type='file' class='form-control' value='". $row["ImagePath"] ."' name='fileToUpload' id='fileToUpload'>
                 </div>
                 <div class='mb-3 mt-3'>
+                    <label for='Select' class='form-label'>Sil: </label>
                     <select class='form-select' name='select' id='select'>
                         <option value='0'>Hayır</option>
                         <option value='1'>Evet</option>

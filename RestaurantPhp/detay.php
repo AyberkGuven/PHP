@@ -41,8 +41,11 @@
                         echo "<script>alert('Giriş yapınız');</script>";
                     }else {
                         echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                        if (!$_COOKIE[$Form_Rank] == "Yönetici") {
+                            header('Location: login.php');
+                        }
                     }
-                    session_destroy();
+                    // session_destroy();
                 ?> -->
                 <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
             </div>

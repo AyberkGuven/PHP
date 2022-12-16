@@ -39,10 +39,14 @@
                     session_start();
                     if (!isset($_SESSION['name'])) {
                         echo "<script>alert('Giriş yapınız');</script>";
+                        if (!isset($_COOKIE[$Form_Rank])) {
+                            echo "<script>alert('Yektisiz Giriş');</script>";
+                        }
+                        header('Location: login.php');
                     }else {
                         echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
                     }
-                    session_destroy();
+                    // session_destroy();
                 ?>
                 <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
             </div>

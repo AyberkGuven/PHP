@@ -3,6 +3,7 @@
     $username = "root";
     $password = "";
     $dbname = "lokantadb_mysql_9061";
+    // session_start();
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     $conn -> set_charset("utf8");

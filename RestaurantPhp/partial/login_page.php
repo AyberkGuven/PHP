@@ -45,6 +45,7 @@
     if ($result->num_rows > 0) {
 
         $_SESSION['name'] = $Form_Name;
+        setcookie($Form_Rank, "", time() + (86400 * 30), "/"); // 86400 = 1 Gün
         header('Location: ../index.php');
 
         // Sorgu yapılmasına gerek yok.
