@@ -10,7 +10,7 @@
         public function get_Data(){
             $this->open_Connect();
 
-            $sql = "SELECT *  FROM Students";
+            $sql = "SELECT * FROM Students";
             $result = $this->conn->query($sql);
 
             $this->close_Connect();
@@ -52,8 +52,41 @@
             header("location:index.php");
         }
 
+        public function get_UpdateData(){
+            $this->open_Connect();
+
+            $sql = "SELECT * FROM students WHERE Id=". $_GET["id"] ." ";
+            $result = $this->conn->query($sql);
+
+            $this->close_Connect();
+
+            return $result;
+        }
+
         public function Update(){
-            echo "Merhaba Hoşgeldiniz";
+            $this->open_Connect();
+
+            $updateId = $_POST["SID"];
+            $Name = $_POST["name"];
+            $surName = $_POST["surname"];
+
+            require 'models/student_Model.php';
+            $Student = new Students();
+
+            $Student->set_Name($Name);
+            $Student->set_surName($surName);
+
+            $sqlUpdate = "UPDATE students SET Name = '$Name', SurName = '$surName' WHERE Id=$updateId ";
+
+            if ($this->conn->query($sqlUpdate) === TRUE) {
+                echo "<script>alert('Güncelleme Başarılı');</script>";
+            }else {
+                echo "<script>alert('Güncelleme Başarısız');</script>";
+            }
+
+            $this->close_Connect();
+
+            header("location:index.php");
         }
 
         public function Delete(){

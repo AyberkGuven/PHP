@@ -8,7 +8,7 @@
                 <td>". $row["Name"] ."</td>
                 <td>". $row["SurName"] ."</td>
                 <td>
-                    <a class='btn btn-success' href='index.php?id=". $row["Id"] ."&btn=1'>Güncelle</a>
+                    <a class='btn btn-success' href='update.php?id=". $row["Id"] ."&btn=1'>Güncelle</a>
                     <a class='btn btn-danger' href='index.php?id=". $row["Id"] ."&btn=0'>Sil</a>
                 </td>
             </tr>";

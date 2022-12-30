@@ -37,21 +37,28 @@
     </header>
     <content>
         <div class="container">
-            <form class="form" action="/action_page.php" method="post" enctype="multipart/form-data">
-                <div class="mb-3 mt-3">
-                    <label for="Name" class="form-label">Adınız:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Adınızı Giriniz..." name="name">
-                </div>
-                <div class="mb-3">
-                    <label for="SurName" class="form-label">Soyadınız:</label>
-                    <input type="text" class="form-control" id="surname" placeholder="Soyadınızı Giriniz..." name="surname">
-                </div>
-                <button type="submit" class="btn btn-primary">Kaydet</button>
+            <form class="form" action="update.php" method="post" enctype="multipart/form-data">
+                <?php
+                    if (!$_POST) {
+                        $get_Update = new Services();
+                        $resultUpdate = $get_Update->get_UpdateData();
+
+                        include 'partial/update_page.php';
+                    }
+                ?>
             </form>
         </div>
     </content>
     <footer class="container">
         <p>&copy; Tüm Hakları Saklıdır.</p>
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $update = new Services();
+                $result = $update->Update();
+
+                echo $result;
+            }
+        ?>
     </footer>    
 </body>
 </html>

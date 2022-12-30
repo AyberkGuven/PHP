@@ -43,26 +43,36 @@
 
                 include 'partial/data_list.php';
 
-                // if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                    if (isset($_GET["id"]) == null){
+                if (isset($_GET["id"]) == null){
                         // echo "Veri Yok...";
-                        // $update = new Services();
-                        // $resultUpdate = $update->Update();
-                    }else {
-                        switch ($_GET["btn"]) {
-                            case 0:
-                                $delete = new Services();
-                                $resultDelete = $delete->Delete();
-                                break;
-                            case 1:
-                                echo "update";
-                                // $update = new Services();
-                                // $resultUpdate = $update->Update();
-                                break;
-                            default:
-                                # code...
-                                break;
-                        }
+                }else {
+                    $delete = new Services();
+                    $resultDelete = $delete->Delete();
+                }               
+
+                // REQUEST_METHOD f5 atıldığında da GET methodu olarak geliyor...
+                // if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                    // Eğer id yoksa hiçbirşey yapma... Çalışıyor Update farklı sayfaya gideceği için gereksiz.
+                    // if (isset($_GET["id"]) == null){
+                    //     // echo "Veri Yok...";
+                    //     // $update = new Services();
+                    //     // $resultUpdate = $update->Update();
+                    // }else {
+                    //     switch ($_GET["btn"]) {
+                    //         case 0:
+                    //             $delete = new Services();
+                    //             $resultDelete = $delete->Delete();
+                    //             break;
+                    //         case 1:
+                    //             echo "update";
+                    //             // $update = new Services();
+                    //             // $resultUpdate = $update->Update();
+                    //             break;
+                    //         default:
+                    //             # code...
+                    //             break;
+                    //     }
+                        // id beraber btn gelmesine rağmen elseif de ki komutu uyguluyor...
                         // if (isset($_GET["btn"]) == 0) {
                         //     $delete = new Services();
                         //     $resultDelete = $delete->Delete();
@@ -71,7 +81,7 @@
                         //     // $update = new Services();
                         //     // $resultUpdate = $update->Update();
                         // }
-                    }
+                    // }
                 // }
             ?>
         </div>
