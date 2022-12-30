@@ -1,8 +1,8 @@
 <?php
     class Students{
-        public $Id;
-        public $Name;
-        public $surName;
+        private $Id;
+        private $Name;
+        private $surName;
 
         public function set_Id($Id){
             $this->Id = $Id;

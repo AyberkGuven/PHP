@@ -14,12 +14,21 @@
             $result = $this->conn->query($sql);
 
             $this->close_Connect();
+
             return $result;
         }
 
         public function Create(){
             // Formdan geldi.
-            // echo "".$_POST["name"]." ". $_POST["surname"]."" ;
+            // echo $_POST["name"];
+            // echo $_POST["surname"];
+
+            // student model geldi.
+            // echo $Student->get_Name();
+            // echo " ";
+            // echo $Student->get_surName();
+
+            $this->open_Connect();
 
             $Name = $_POST["name"];
             $surName = $_POST["surname"];
@@ -30,11 +39,17 @@
             $Student->set_Name($Name);
             $Student->set_surName($surName);
             
-            echo $Student->get_Name();
-            echo " ";
-            echo $Student->get_surName();
+            $sql = "INSERT INTO students (Name, surName) VALUES ('$Name', '$surName')";
+            
+            if ($this->conn->query($sql) === TRUE) {
+                echo "<script>alert('New record created successfully');</script>";
+            }else {
+                echo "Error: " . $sql . "<br>" . $this->conn->error;
+            }
 
-            // return $Student;
+            $this->close_Connect();
+
+            header("location:index.php");
         }
 
         public function Update(){
@@ -42,7 +57,21 @@
         }
 
         public function Delete(){
-            echo "Merhaba Hoşgeldiniz";
+            $this->open_Connect();
+            
+            $DeleteId = $_GET["id"];
+
+            $sql = "DELETE FROM students WHERE Id=$DeleteId";
+
+            if ($this->conn->query($sql) === TRUE) {
+                
+            }else {
+                echo "<script>alert('Silinmedi');</script>". $this->conn->error;
+            }
+
+            $this->close_Connect();
+            
+            header("location:index.php");
         }
 
         private function open_Connect(){

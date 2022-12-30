@@ -40,8 +40,39 @@
             <?php
                 $students = new Services();
                 $result=$students->get_Data();
-               
+
                 include 'partial/data_list.php';
+
+                // if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                    if (isset($_GET["id"]) == null){
+                        // echo "Veri Yok...";
+                        // $update = new Services();
+                        // $resultUpdate = $update->Update();
+                    }else {
+                        switch ($_GET["btn"]) {
+                            case 0:
+                                $delete = new Services();
+                                $resultDelete = $delete->Delete();
+                                break;
+                            case 1:
+                                echo "update";
+                                // $update = new Services();
+                                // $resultUpdate = $update->Update();
+                                break;
+                            default:
+                                # code...
+                                break;
+                        }
+                        // if (isset($_GET["btn"]) == 0) {
+                        //     $delete = new Services();
+                        //     $resultDelete = $delete->Delete();
+                        // }elseif (isset($_GET["btn"]) == 1) {
+                        //     echo "update";
+                        //     // $update = new Services();
+                        //     // $resultUpdate = $update->Update();
+                        // }
+                    }
+                // }
             ?>
         </div>
     </content>
