@@ -39,12 +39,23 @@
                     session_start();
                     if (!isset($_SESSION['name'])) {
                         echo "<script>alert('Giriş yapınız');</script>";
-                        if (!isset($_COOKIE[$Form_Rank])) {
+                        if (!isset($_COOKIE["yetki"])) {
                             echo "<script>alert('Yektisiz Giriş');</script>";
                         }
                         header('Location: login.php');
                     }else {
-                        echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                        // switch ($_COOKIE['yetki']) {
+                        //     case 1:
+                        //         echo "<p>Yönetici</p>";
+                        //         break;
+                        //     case 2:
+                        //         echo "<p>Kullanıcı</p>";
+                        //         break;
+                        //     default:
+                        //         # code...
+                        //         break;
+                        // }
+                        echo "<p>Hoşgeldin: ".$_SESSION['name']." ". $_COOKIE['yetki'] ."</p>";
                     }
                     // session_destroy();
                 ?>

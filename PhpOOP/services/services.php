@@ -18,7 +18,7 @@
             return $result;
         }
 
-        public function Create(){
+        public function Create($post){
             // Formdan geldi.
             // echo $_POST["name"];
             // echo $_POST["surname"];
@@ -30,8 +30,8 @@
 
             $this->open_Connect();
 
-            $Name = $_POST["name"];
-            $surName = $_POST["surname"];
+            $Name = $post["name"];
+            $surName = $post["surname"];
 
             require 'models/student_Model.php';
             $Student = new Students();
@@ -63,12 +63,12 @@
             return $result;
         }
 
-        public function Update(){
+        public function Update($post){
             $this->open_Connect();
 
-            $updateId = $_POST["SID"];
-            $Name = $_POST["name"];
-            $surName = $_POST["surname"];
+            $updateId = $post["SID"];
+            $Name = $post["name"];
+            $surName = $post["surname"];
 
             require 'models/student_Model.php';
             $Student = new Students();
@@ -89,10 +89,10 @@
             header("location:index.php");
         }
 
-        public function Delete(){
+        public function Delete($delId){
             $this->open_Connect();
             
-            $DeleteId = $_GET["id"];
+            $DeleteId = $delId["id"];
 
             $sql = "DELETE FROM students WHERE Id=$DeleteId";
 

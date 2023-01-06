@@ -46,16 +46,16 @@
                     <label for="SurName" class="form-label">Soyadınız:</label>
                     <input type="text" class="form-control" id="surname" placeholder="Soyadınızı Giriniz..." name="surname">
                 </div>
-                <button type="submit" class="btn btn-primary">Kaydet</button>
+                <button type="submit" name="submit" id="submit" class="btn btn-primary">Kaydet</button>
             </form>
         </div>
     </content>
     <footer class="container">
         <p>&copy; Tüm Hakları Saklıdır.</p>
         <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["submit"])) {
                 $create = new Services();
-                $result = $create->Create();
+                $result = $create->Create($_POST);
 
                 echo $result;
             }
@@ -63,3 +63,5 @@
     </footer>    
 </body>
 </html>
+
+<!-- $_SERVER["REQUEST_METHOD"] == "POST" -->

@@ -1,6 +1,6 @@
 <?php
     session_destroy();
-    setcookie($Form_Rank, "", time() - 3600);
+    setcookie('yetki', $Form_Rank, time() -1);
     header('Location: ../login.php');
     exit;
 ?>

@@ -12,7 +12,7 @@
                     <label for='SurName' class='form-label'>Soyadınız:</label>
                     <input type='text' class='form-control' value='". $row["SurName"] ."' id='surname' name='surname'>
                 </div>
-                <button type='submit' class='btn btn-primary'>Kaydet</button>
+                <button type='submit' name='submit' id='submit' class='btn btn-primary'>Kaydet</button>
             ";
         }
     }else {

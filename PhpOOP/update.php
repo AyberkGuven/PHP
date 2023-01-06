@@ -52,9 +52,9 @@
     <footer class="container">
         <p>&copy; Tüm Hakları Saklıdır.</p>
         <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST["submit"])) {
                 $update = new Services();
-                $result = $update->Update();
+                $result = $update->Update($_POST);
 
                 echo $result;
             }
@@ -62,3 +62,4 @@
     </footer>    
 </body>
 </html>
+<!-- $_SERVER["REQUEST_METHOD"] == "POST" -->

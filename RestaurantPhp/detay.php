@@ -41,7 +41,7 @@
                         echo "<script>alert('Giriş yapınız');</script>";
                     }else {
                         echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
-                        if (!$_COOKIE[$Form_Rank] == "Yönetici") {
+                        if (!isset($_COOKIE['yetki']) == 2) {
                             header('Location: login.php');
                         }
                     }

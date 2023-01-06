@@ -45,7 +45,11 @@
     if ($result->num_rows > 0) {
 
         $_SESSION['name'] = $Form_Name;
-        setcookie($Form_Rank, "", time() + (86400 * 30), "/"); // 86400 = 1 Gün
+        // $_SESSION['rank'] = $Form_Rank;
+        setcookie('yetki', $Form_Rank, time() + (86400 * 30), "/"); // 86400 = 1 Gün
+        
+        // echo $Form_Name;
+        // echo $_COOKIE[$Form_Name];
         header('Location: ../index.php');
 
         // Sorgu yapılmasına gerek yok.
