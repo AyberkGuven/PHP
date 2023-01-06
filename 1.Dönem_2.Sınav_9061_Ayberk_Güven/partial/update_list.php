@@ -44,7 +44,7 @@
                 <label for='Class'>Sınıf:</label>
                 <select class='form-select' id='class' name='classId'>";
                     while ($rowClass = $resultClass->fetch_assoc()) {
-                        echo "<option value='". $row["Id"] ."' ";
+                        echo "<option value='". $rowClass["Id"] ."' ";
                         if ($rowClass["Id"] == $row["classId"]) {
                             echo "selected";
                         }

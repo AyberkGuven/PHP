@@ -56,17 +56,26 @@
 
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
+        // echo "Sorry, your file was not uploaded.";
+        $sqlUpdate = "SELECT Id, imagePath FROM student";
+        $resultUpdate = $conn->query($sqlUpdate);
+
+        while ($rowUpdate = $resultUpdate->fetch_assoc()) {
+            if ($rowUpdate["Id"] == $updateId) {
+                $Image = $rowUpdate["imagePath"];
+            }
+        }
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            $Image = $target_file;
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
     }
 
-    $sql = "UPDATE student SET Name = '$Name', surName = '$surName', Gender = '$Gender', classId = '$classId', imagePath = '$target_file' WHERE Id = '$updateId'";
+    $sql = "UPDATE student SET Name = '$Name', surName = '$surName', Gender = '$Gender', classId = '$classId', imagePath = '$Image' WHERE Id = '$updateId'";
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>alert('Güncelleme Başarılı');</script>";
@@ -76,5 +85,6 @@
 
     $conn->close();
 
+    // echo $Image;
     header('Location: ../index.php');
 ?>
