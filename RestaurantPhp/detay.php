@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,12 +39,11 @@
             </div>
             <div class="d-flex">
                 <?php
-                    session_start();
-                    switch ($_SESSION['name']) {
-                        case 'admin':
+                    switch ($_COOKIE['yetki']) {
+                        case '1':
                             echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
                             break;
-                        case 'user':
+                        case '2':
                             header('Location: index.php');
                             break;
                         default:

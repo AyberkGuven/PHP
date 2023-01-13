@@ -1,3 +1,29 @@
+<?php
+    session_start();
+    
+    if (isset($_SESSION['name']) == NULL && isset($_COOKIE["yetki"]) == "1") {
+        // echo "<script>alert('Giriş yapınız');</script>";
+        // if (!isset($_COOKIE["yetki"])) {
+        //     echo "<script>alert('Yektisiz Giriş');</script>";
+        // }
+        header('Location: login.php');
+    }else {
+        // switch ($_COOKIE['yetki']) {
+        //     case 1:
+        //         echo "<p>Yönetici</p>";
+        //         break;
+        //     case 2:
+        //         echo "<p>Kullanıcı</p>";
+        //         break;
+        //     default:
+        //         # code...
+        //         break;
+        // }
+        // echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+        // echo "<p>Hoşgeldin: ".$_SESSION['name']." ". $_COOKIE['yetki'] ."</p>";
+    }
+    // session_destroy();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,29 +62,7 @@
             </div>
             <div class="d-flex">
                 <?php
-                    session_start();
-                    if (!isset($_SESSION['name'])) {
-                        echo "<script>alert('Giriş yapınız');</script>";
-                        // if (!isset($_COOKIE["yetki"])) {
-                        //     echo "<script>alert('Yektisiz Giriş');</script>";
-                        // }
-                        header('Location: login.php');
-                    }else {
-                        // switch ($_COOKIE['yetki']) {
-                        //     case 1:
-                        //         echo "<p>Yönetici</p>";
-                        //         break;
-                        //     case 2:
-                        //         echo "<p>Kullanıcı</p>";
-                        //         break;
-                        //     default:
-                        //         # code...
-                        //         break;
-                        // }
-                        echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
-                        // echo "<p>Hoşgeldin: ".$_SESSION['name']." ". $_COOKIE['yetki'] ."</p>";
-                    }
-                    // session_destroy();
+                    echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
                 ?>
                 <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
             </div>
