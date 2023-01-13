@@ -46,7 +46,7 @@
 
         $_SESSION['name'] = $Form_Name;
         // $_SESSION['rank'] = $Form_Rank;
-        setcookie('yetki', $Form_Rank, time() + (86400 * 30), "/"); // 86400 = 1 Gün
+        // setcookie('yetki', $Form_Rank, time() + (86400 * 30), "/"); // 86400 = 1 Gün
         
         // echo $Form_Name;
         // echo $_COOKIE[$Form_Name];

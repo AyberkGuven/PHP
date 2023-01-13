@@ -35,18 +35,30 @@
                 </ul>
             </div>
             <div class="d-flex">
-                <!-- <?php
+                <?php
                     session_start();
-                    if (!isset($_SESSION['name'])) {
-                        echo "<script>alert('Giriş yapınız');</script>";
-                    }else {
-                        echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
-                        if (!isset($_COOKIE['yetki']) == 2) {
-                            header('Location: login.php');
-                        }
+                    switch ($_SESSION['name']) {
+                        case 'admin':
+                            echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                            break;
+                        case 'user':
+                            header('Location: index.php');
+                            break;
+                        default:
+                            # code...
+                            break;
                     }
+                    // if (isset($_SESSION['name']) == "user") {
+                    //     header('Location: index.php');
+                    //     // echo "<script>alert('Giriş yapınız');</script>";
+                    // }else {
+                    //     echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                    //     // if (!isset($_COOKIE['yetki']) == 2) {
+                    //     //     header('Location: login.php');
+                    //     // }
+                    // }
                     // session_destroy();
-                ?> -->
+                ?>
                 <a class="nav-link" href="partial/logout.php">Çıkış Yap</a>
             </div>
         </div>

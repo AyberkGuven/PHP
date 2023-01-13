@@ -39,9 +39,9 @@
                     session_start();
                     if (!isset($_SESSION['name'])) {
                         echo "<script>alert('Giriş yapınız');</script>";
-                        if (!isset($_COOKIE["yetki"])) {
-                            echo "<script>alert('Yektisiz Giriş');</script>";
-                        }
+                        // if (!isset($_COOKIE["yetki"])) {
+                        //     echo "<script>alert('Yektisiz Giriş');</script>";
+                        // }
                         header('Location: login.php');
                     }else {
                         // switch ($_COOKIE['yetki']) {
@@ -55,7 +55,8 @@
                         //         # code...
                         //         break;
                         // }
-                        echo "<p>Hoşgeldin: ".$_SESSION['name']." ". $_COOKIE['yetki'] ."</p>";
+                        echo "<p>Hoşgeldin: ".$_SESSION['name']."</p>";
+                        // echo "<p>Hoşgeldin: ".$_SESSION['name']." ". $_COOKIE['yetki'] ."</p>";
                     }
                     // session_destroy();
                 ?>
