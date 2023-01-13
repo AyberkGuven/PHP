@@ -1,7 +1,6 @@
 <?php
     session_start();
-    
-    if (isset($_SESSION['name']) == NULL && isset($_COOKIE["yetki"]) == "1") {
+    if (isset($_SESSION['name']) == NULL && isset($_COOKIE["yetki"]) == NULL) {
         // echo "<script>alert('Giriş yapınız');</script>";
         // if (!isset($_COOKIE["yetki"])) {
         //     echo "<script>alert('Yektisiz Giriş');</script>";
