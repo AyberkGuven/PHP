@@ -43,10 +43,15 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-
         $_SESSION['name'] = $Form_Name;
+        
+        if(!isset($_SESSION['name'])){
+            
+        }else{
+            setcookie("yetki", $Form_Rank, time() + 3 * 24 * 60 * 60, '/'); // 86400 = 1 Gün
+        }
+        
         // $_SESSION['rank'] = $Form_Rank;
-        setcookie("yetki", $Form_Rank, time() + 3 * 24 * 60 * 60, '/'); // 86400 = 1 Gün
         
         // echo $Form_Name;
         // echo $_COOKIE[$Form_Name];
