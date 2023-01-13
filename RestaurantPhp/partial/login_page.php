@@ -43,11 +43,10 @@
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $_SESSION['name'] = $Form_Name;
-        
-        if(!isset($_SESSION['name'])){
+        if($Form_Name == NULL){
             
         }else{
+            $_SESSION['name'] = $Form_Name;
             setcookie("yetki", $Form_Rank, time() + 3 * 24 * 60 * 60, '/'); // 86400 = 1 Gün
         }
         
