@@ -1,0 +1,122 @@
+.primary-section{
+    display: flex;
+}
+.logo{
+    width: 87%;
+}
+.header-aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+}
+.header-aside span{
+    font-family: 'geoslab703_md_btmedium';
+    font-size: 21px;
+    background: url(../images/phone.jpg) no-repeat;
+    line-height: 33px;
+    float: left;
+    padding-left: 10px;
+}
+.nav-section{
+    background-color: #D63934;
+    height: 35px;
+    width: 100%;
+    border-radius: 7px;
+    display: flex;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    width: 81%;
+}
+#header li{
+    list-style-type: none;
+    padding-right: 10px;
+}
+.navigation a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.search-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-box li input{
+    padding: 3.75px 15px;
+    border-radius: 5px;
+    border: none;
+}
+.sms-last{
+    position: relative;
+}
+.search-box li a{
+    background: url(../images/search.png) no-repeat;
+    display: block;
+    height: 17px;
+    left: 7.99px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 7px;
+    width: 17px;
+}
+.container{
+    display: flex;
+    padding-top: 1em;
+    height: 400px;
+    width: 100%;
+}
+.info li{
+    list-style-type: none;
+    border-bottom: dotted;
+}
+.info li a{
+    background: url(../images/m-icon.jpg) left center no-repeat;
+    padding-left: 27px;
+    font-size: 13px;
+    line-height: 29px;
+    color: #353434;
+    display: block;
+    text-decoration: none;
+}
+.sidebar{
+    width: 25%;
+}
+.sidebar ul{
+    padding-left: 15px;
+}
+.lates-product h2{
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 5px 5px 0 0;
+    padding: 5px 10px;
+    margin-top: 0;
+}
+.content-right{
+    width: 75%;
+    position: relative;
+    margin: 0 15px;
+}
+.content-right img{
+    width: 100%;
+    display: block;
+    height: auto;
+    position: absolute;
+}
+.banner-text{
+    position: absolute;
+    right: 0;
+}
+.copyright ul{
+    display: flex;
+}
+.copyright li{
+    list-style-type: none;
+    
+}
+.copyright a{
+    text-decoration: none;
+    color: #D63934;
+}
