@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="content-right">
-                        Slider
+                        
                         <!-- <div class="banner">
                             <div class="slides">
                                 <div class="slides_container">
