@@ -111,7 +111,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-
                     <form class="main_form" action="partial/create_page.php" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-12">
@@ -120,19 +119,23 @@
                             <div class="col-md-12">
                                 <input class="form-control" placeholder="Telefonun ismi" type="text" name="name">
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                <select class="form-select" id="brand" name="brand">
-                                    <?php
-                                        include 'partial/brand_list.php';
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                                <select class="form-select" id="kind" name="kind">
-                                    <?php
-                                        include 'partial/kind_list.php';
-                                    ?>
-                                </select>
+                            <div class="col-md-12">
+                                <div class="row borderEkle">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <select class="form-select" id="brand" name="brand">
+                                            <?php
+                                                include 'partial/brand_list.php';
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                        <select class="form-select" id="kind" name="kind">
+                                            <?php
+                                                include 'partial/kind_list.php';
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-12 br">
                                 <input class="form-control" placeholder="Fiyatı" type="text" name="price">

@@ -1,3 +1,14 @@
 .br{
     margin-top: 1em;
 }
+.borderEkle{
+    border: 2px solid #ff0000;
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin-right: 0!important;
+    margin-left: 0!important;
+}
+.borderEkle div > div{
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
