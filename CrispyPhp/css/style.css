@@ -6,6 +6,9 @@ content footer{
 .banner{
     background-image: url('../images/header/luisa-brimble-aFzg83dvnAI-unsplash.jpg');
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 235%;
+    background-size: cover;
 }
 .banner div{
     background-image: linear-gradient(transparent, #000000);
@@ -46,17 +49,20 @@ content footer{
 .content-Background:nth-child(1){
     background-color: rgba(0, 0, 0, 0.1)!important;
 }
-content div > div > div > div{
+content div > div > div > .card{
     width: 300px!important;
     border: none!important;
 }
-content div > div > div:nth-child(2) > div{
+content div > div > .lunch > div{
     width: 449px!important;
     border: none;
 }
 footer{
     background-image: url('../images/daan-evers-tKN1WXrzQ3s-unsplash.jpg');
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 235%;
+    background-size: cover;
 }
 .footer{
     background-image: linear-gradient(transparent, #000000);
@@ -94,4 +100,65 @@ form > button{
 .week p{
     display: inline-block!important;
     margin-right: 3em!important;
+}
+
+/* Story css */
+.bannerStory{
+    background-image: url('../images/header/briana-tozour-V_Nkf1E-vYA-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 235%;
+    background-size: cover;
+}
+.bannerStory div{
+    background-image: linear-gradient(transparent, #000000);
+    height: 321px;
+    position: relative;
+}
+.bannerStory div > div{
+    position: absolute;
+    text-align: center;
+    color: #ffffff;
+    margin-right: auto;
+    margin-left: auto;
+    background-image: none;
+    width: 100%;
+    top: 37%;
+}
+.bannerStory div > div h1{
+    font-size: 55px;
+}
+.bannerStory div > div p{
+    font-size: 11px;
+}
+.newsletter{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: 7%;
+    margin-left: 7%;
+}
+.circleimg{
+    width: 333px;
+    height: 255px;
+}
+.btnStory{
+    float: unset; 
+    padding: 5px 237px!important;
+}
+.template{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-right: 7%;
+    margin-left: 7%;
+}
+.link p > a{
+    text-decoration: none;
+    color: #ee9900;
+}
+.breakfast{
+    background-color: rgba(0, 0, 0, 0.1)!important;
+}
+.contentStory{
+    margin-right: 7%;
+    margin-left: 7%;
 }

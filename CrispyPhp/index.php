@@ -27,7 +27,7 @@
                             <a class="nav-link" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Story</a>
+                            <a class="nav-link" href="story.php">Story</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="index.php">Menu</a>
@@ -56,7 +56,7 @@
         <content>
             <div class="content-Background">
                 <div class="container">
-                    <div class="breakfast row">
+                    <div class="row">
                         <h1>Breakfast Menu</h1>
                         <div class="card col-sm-4">
                             <img class="card-img-top" src="images/breakfast/brett-jordan-8xt8-HIFqc8-unsplash.jpg" alt="brett-jordan">

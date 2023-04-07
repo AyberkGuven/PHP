@@ -44,59 +44,72 @@
                     <button class="btn btn-danger" type="button">Reservation</button>
                 </div>
             </nav>
-            <div class="banner">
+            <div class="bannerStory">
                 <div>
                     <div>
-                        <h1>Our Menus</h1>
-                        <p>Perfect Not all Breakfast, Lunch and Olmenar</p>
+                        <h1>Kitchen Story</h1>
+                        <p>This is how our kitchen evoled in new digital era</p>
                     </div>
                 </div>
             </div>
         </header>
         <content>
-            <div class="container">
-                <h1>Leave a message</h1>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <label for="name">Full Name:</label>
-                                    <input type="text" class="form-control" placeholder="Your Name" name="name">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="phone">Phone Number:</label>
-                                    <input type="tel" class="form-control" placeholder="123-456-7890" name="phone">
-                                </div>
-                            </div>
-                            <div class="mb-3 mt-3">
-                                <label for="email">Email:</label>
-                                <input type="email" class="form-control" id="email" placeholder="Your Email" name="email">
-                            </div>
-                            <div class="mb-3 mt-3">
-                                <label for="message">Message:</label>
-                                <textarea class="form-control" rows="5" id="message" name="message"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-dark">SEND</button>
-                        </form>
-                    </div>
-                    <div class="col-sm-6 week">
-                        <div>
-                            <h4>Weekdays</h4>
-                            <p>Monday to Friday</p><p>10.00 AM - 08.00 PM</p>
-                        </div>
-                        <div>
-                            <h4>Weekends</h4>
-                            <p>Saturday and Sunday</p><p>11.00 AM - 11.00 PM</p>
-                        </div>
-                    </div>
-                </div>
+            <div>
                 <div>
-                    <h3>121 Einstein Loop N, Bronx, NY 10475, United States</h3>
-                    <div style="width: 100%"><iframe width="100%" height="333" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=121%20Einstein%20Loop%20N,%20Bronx,%20NY%2010475,%20United%20States+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                        <a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe>
+                    <div class="row template">
+                        <div class="col-sm-6">
+                            <h2>Crispy is the lates bootstrap 5 HTML template provided by Tooplate website.</h2>
+                            <button class="btn btn-dark" type="button">Check out News</button>
+                            <button type="button" class="btn btn-danger">Say Hi</button>
+                        </div>
+                        <div class="col-sm-6 link">
+                            <p>Since this website template is 100% free to use, you can edit and apply is for your commercial restaurant websites. There are is HTML pages included in this template. Please <strong>click "Reservation" button</strong>on the top right to see the pop up reservation form.</p>
+                            <p>You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please <a href="contact.php">contact us</a> for more information.</p>
+                        </div>
                     </div>
-                    <!-- <div id="googleMap" style="width:100%;height:400px;"></div> -->
+                    <div class="breakfast">
+                        <div class="contentStory row">
+                            <h1>Team Members</h1>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="images/team/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg" alt="hamilton">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sophia</h4>
+                                    <p class="card-text">CEO & Founder</p><i></i>
+                                </div>
+                            </div>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="images/team/nicolas-horn-MTZTGvDsHFY-unsplash.jpg" alt="nicolas-horn">
+                                <div class="card-body">
+                                    <h4 class="card-title">Benjamin W.</h4>
+                                    <p class="card-text">Restaurant Manager</p><i></i>
+                                </div>
+                            </div>
+                            <div class="card col-sm-4">
+                                <img class="card-img-top" src="images/team/rc-cf-FMh5o5m5N9E-unsplash.jpg" alt="cf">
+                                <div class="card-body">
+                                    <h4 class="card-title">Muchen Jack</h4>
+                                    <p class="card-text">Senior Chef</p><i></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row newsletter">
+                        <div class="col">
+                            <img class="rounded-circle circleimg" src="images/charles-deluvio-FdDkfYFHqe4-unsplash.jpg" alt="">
+                        </div>
+                        <div class="col">
+                            <h4>Our Newsletter</h4>
+                            <p>The food news every day</p>
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <div class="mb-3 mt-3">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Your email address" name="email">
+                                </div>
+                                <button type="submit" class="btn btn-dark btnStory">SUBSCRIBE</button>
+                            </form>
+                            <p>Uy signing up, you agree to our Privacy Notice and the data policy</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </content>
@@ -137,14 +150,3 @@
     </div>
 </body>
 </html>
-<script>
-    function myMap() {
-        var mapProp= {
-        center:new google.maps.LatLng(51.508742,-0.120850),
-        zoom:5,
-        };
-        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-        }
-</script>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
