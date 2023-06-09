@@ -1,0 +1,66 @@
+header{
+    border-bottom: 3px solid #c8cfd3;
+}
+section{
+    margin-top: 1em;
+}
+.banner{
+    width: 100%;
+    height: 100%;
+}
+.active{
+    color: #FE4D01!important;
+    border-bottom: 2px solid #FE4D01;
+}
+.nav-link:hover{
+    color: #FE4D01;
+    border-bottom: 2px solid #FE4D01;
+}
+.card-cause{
+    background-color: #EDF2F5;
+    margin-left: 1em;
+}
+.card-cause h5{
+    padding-top: 1em;
+}
+.card-cause p{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.cause-imgs{
+    width: 250px;
+    height: 315px;
+}
+.icon{
+    margin-top: 1em;
+}
+.icon > i {
+    color: #FE4D01;
+    margin-top: 1em;
+}
+.icon > p{
+    display: inline;
+    margin-left: 1em;
+}
+.btn-contact{
+    background-color: #FE4D01;
+    color: #EDF2F5;
+    border-radius: 1.5em;
+    padding: 10px 21px;
+    border: none;
+    margin-bottom: 1em;
+}
+.form-contact{
+    background-color: #EDF2F5;
+    text-align: center;
+}
+footer{
+    text-align: center;
+    background-color: #131112;
+    color: #EDF2F5;
+    height: 55px;
+}
+footer > p{
+    padding-top: 1em;
+    margin-top: 1em;
+}
